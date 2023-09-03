@@ -5,6 +5,7 @@ import {
   TwitterLogo,
   Share,
 } from 'phosphor-react';
+import { Link } from 'react-router-dom';
 const landingPage = () => {
   return (
     <>
@@ -36,9 +37,11 @@ const landingPage = () => {
                                 believable.
                               </p>
                               <div className="d-flex">
-                                <button className="text-uppercase custom_orange-btn mr-3 btn ">
-                                  Get Started
-                                </button>
+                                <Link to="/recipes">
+                                  <button className="text-uppercase custom_orange-btn mr-3 btn ">
+                                    Get Started
+                                  </button>
+                                </Link>
                                 {/* <a
                                   href=""
                                   className="text-uppercase custom_dark-btn"
