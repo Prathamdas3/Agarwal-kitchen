@@ -6,10 +6,13 @@ import {
   Share,
 } from 'phosphor-react';
 import { Link } from 'react-router-dom';
+
+import Test from '../assets/Images/test_image.jpg';
+import Hero from '../assets/Images/hero_image.svg';
 const landingPage = () => {
   return (
     <>
-      <div className="hero_area">
+      <div className="hero_area ">
         <section className=" slider_section position-relative">
           <div
             id="carouselExampleControls"
@@ -22,14 +25,16 @@ const landingPage = () => {
                   <div className="slider_item-container">
                     <div className="container">
                       <div className="row">
-                        <div className="col-md-6">
+                        <div className="col-md-7">
                           <div className="slider_item-detail">
                             <div>
                               <h1>
                                 Welcome to <br />
-                                Our Fruits Shop
+                                Agarwal's Kitchen
                               </h1>
-                              <p>
+                              <p
+                                style={{ width: '40rem', textAlign: 'justify' }}
+                              >
                                 There are many variations of passages of Lorem
                                 Ipsum available, but the majority have suffered
                                 alteration in some form, by injected humour, or
@@ -52,114 +57,10 @@ const landingPage = () => {
                             </div>
                           </div>
                         </div>
-                        <div className="col-md-6">
+                        <div className="col-md-5">
                           <div className="slider_img-box">
                             <div>
-                              {/* <img src="" alt="" className="" /> */}
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div className="carousel-item">
-                <div className="slider_item-box">
-                  <div className="slider_item-container">
-                    <div className="container">
-                      <div className="row">
-                        <div className="col-md-6">
-                          <div className="slider_item-detail">
-                            <div>
-                              <h1>
-                                Welcome to <br />
-                                Our Fruits Shop
-                              </h1>
-                              <p>
-                                There are many variations of passages of Lorem
-                                Ipsum available, but the majority have suffered
-                                alteration in some form, by injected humour, or
-                                randomised words which don't look even slightly
-                                believable.
-                              </p>
-                              <div className="d-flex">
-                                <a
-                                  href=""
-                                  className="text-uppercase custom_orange-btn mr-3"
-                                >
-                                  Shop Now
-                                </a>
-                                <a
-                                  href=""
-                                  className="text-uppercase custom_dark-btn"
-                                >
-                                  Contact Us
-                                </a>
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-                        <div className="col-md-6">
-                          <div className="slider_img-box">
-                            <div>
-                              {/* <img
-                                src="images/slide-img.png"
-                                alt=""
-                                className=""
-                              /> */}
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div className="carousel-item">
-                <div className="slider_item-box">
-                  <div className="slider_item-container">
-                    <div className="container">
-                      <div className="row">
-                        <div className="col-md-6">
-                          <div className="slider_item-detail">
-                            <div>
-                              <h1>
-                                Welcome to <br />
-                                Our Fruits Shop
-                              </h1>
-                              <p>
-                                There are many variations of passages of Lorem
-                                Ipsum available, but the majority have suffered
-                                alteration in some form, by injected humour, or
-                                randomised words which don't look even slightly
-                                believable.
-                              </p>
-                              <div className="d-flex">
-                                <a
-                                  href=""
-                                  className="text-uppercase custom_orange-btn mr-3"
-                                >
-                                  Shop Now
-                                </a>
-                                <a
-                                  href=""
-                                  className="text-uppercase custom_dark-btn"
-                                >
-                                  Contact Us
-                                </a>
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-                        <div className="col-md-6">
-                          <div className="slider_img-box">
-                            <div>
-                              {/* <img
-                                src="images/slide-img.png"
-                                alt=""
-                                className=""
-                              /> */}
+                              <img src={Hero} alt="" className="" />
                             </div>
                           </div>
                         </div>
@@ -173,21 +74,23 @@ const landingPage = () => {
         </section>
       </div>
 
-      <section className="service_section layout_padding ">
+      {/* Top viewed start */}
+
+      {/* <section className="service_section layout_padding ">
         <div className="container">
-          <h2 className="custom_heading">Our Services</h2>
+          <h2 className="custom_heading">Top viewed</h2>
           <p className="custom_heading-text">
             There are many variations of passages of Lorem Ipsum available, but
             the majority have
           </p>
-          <div className=" layout_padding2">
-            <div className="card-deck">
+          <div className=" layout_padding2 ">
+            <div className="card-deck ">
               <div className="card">
-                {/* <img
+                <img
                   className="card-img-top"
-                  src="images/card-item-1.png"
+                  src={card1}
                   alt="Card image cap"
-                /> */}
+                />
                 <div className="card-body">
                   <h5 className="card-title">Orange</h5>
                   <p className="card-text">
@@ -203,7 +106,7 @@ const landingPage = () => {
                   className="card-img-top"
                   src="images/card-item-2.png"
                   alt="Card image cap"
-                /> */}
+                /> 
                 <div className="card-body">
                   <h5 className="card-title">Grapes</h5>
                   <p className="card-text">
@@ -219,7 +122,7 @@ const landingPage = () => {
                   className="card-img-top"
                   src="images/card-item-3.png"
                   alt="Card image cap"
-                /> */}
+                /> 
                 <div className="card-body">
                   <h5 className="card-title">Gauva</h5>
                   <p className="card-text">
@@ -238,11 +141,15 @@ const landingPage = () => {
             </a>
           </div>
         </div>
-      </section>
+      </section> */}
 
-      <section className="fruit_section">
+      {/* Top viewed End */}
+
+      {/* New videos Start */}
+
+      <section className="fruit_section mt-3">
         <div className="container">
-          <h2 className="custom_heading">Fresh Fruits</h2>
+          <h2 className="custom_heading">Recent Videos</h2>
           <p className="custom_heading-text">
             There are many variations of passages of Lorem Ipsum available, but
             the majority have
@@ -329,11 +236,36 @@ const landingPage = () => {
         </div>
       </section>
 
-      {/* <section className="tasty_section">
-        <div className="container_fluid">
-          <h2>Very tasty fruits</h2>
+      {/* New video end */}
+
+      {/* About section start */}
+
+      <section className="container my-5 ">
+        <h2 className=" fw-bolder">About Me</h2>
+
+        <div className="d-flex gap-5 justify-content-between flex-fill flex-wrap-reverse flex-md-nowrap">
+          <div className="pt-5">
+            <p style={{ width: '35rem', textAlign: 'justify' }}>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Quia
+              facere laudantium ea soluta sed voluptatem dolorem eos ab porro
+              quaerat, suscipit, optio cum voluptates, dolorum magni quisquam.
+              Unde, accusantium nisi. Lorem ipsum, dolor sit amet consectetur
+              adipisicing elit. Aliquam fuga cupiditate mollitia atque eaque
+              voluptates animi ipsam incidunt quam quia molestiae beatae natus
+              sapiente, nihil praesentium ipsa reprehenderit tempora id! Lorem,
+              ipsum dolor sit amet consectetur adipisicing elit. Quisquam quod
+              voluptas atque, eum necessitatibus doloribus reiciendis
+              repudiandae, ut ipsam ipsum beatae iusto modi voluptate odit alias
+              ratione cumque officia molestiae?
+            </p>
+          </div>
+          <div className="w-50 justify-content-start ms-5 d-flex">
+            <img src={Test} alt="About me" width={250} />
+          </div>
         </div>
-      </section> */}
+      </section>
+
+      {/* About section end */}
 
       {/* <section className="client_section layout_padding">
         <div className="container">
@@ -465,10 +397,15 @@ const landingPage = () => {
 
       {/* contact us end  */}
 
-      <section className="info_section layout_padding">
+      {/* footer section start */}
+
+      <section
+        className="info_section layout_padding text-center mt-5"
+        style={{ backgroundColor: '#eeecec' }}
+      >
         <div className="container">
           <div className="row">
-            <div className="col-md-3">
+            {/* <div className="col-md-3">
               <h5>Fruits</h5>
               <ul>
                 <li>randomised</li>
@@ -506,10 +443,10 @@ const landingPage = () => {
                 <li>a passage of</li>
                 <li>Lorem Ipsum,</li>
               </ul>
-            </div>
-            <div className="col-md-3">
-              <div className="social_container">
-                <h5>Follow Us</h5>
+            </div> */}
+            <div className="col-md-12">
+              <div className="social_container ">
+                <h5 style={{ letterSpacing: '4px' }}>Follow Us</h5>
                 {/* <div className="social-box">
                   <a href="">{/* <img src="images/fb.png" alt="" /> </a>
 
@@ -522,22 +459,22 @@ const landingPage = () => {
                   </a>
     </div> */}
               </div>
-              <div className="subscribe_container">
-                <div className="d-flex flex-column gap-2 mt-3">
+              <div className="subscribe_container d-flex justify-content-center">
+                <div className="d-flex flex-row gap-3 mt-4 ">
                   <a href="">
-                    <FacebookLogo size={32} weight="fill" color="black" />
+                    <FacebookLogo size={45} weight="fill" color="black" />
                   </a>
                   <a href="">
-                    <YoutubeLogo size={32} weight="fill" color="black" />
+                    <YoutubeLogo size={45} weight="fill" color="black" />
                   </a>
                   <a href="">
-                    <InstagramLogo size={32} weight="fill" color="black" />
+                    <InstagramLogo size={45} weight="fill" color="black" />
                   </a>
                   <a href="">
-                    <TwitterLogo size={32} weight="fill" color="black" />
+                    <TwitterLogo size={45} weight="fill" color="black" />
                   </a>
                   <a href="">
-                    <Share size={32} weight="fill" color="black" />
+                    <Share size={45} weight="fill" color="black" />
                   </a>
                 </div>
               </div>
@@ -545,6 +482,8 @@ const landingPage = () => {
           </div>
         </div>
       </section>
+
+      {/* footer section end */}
 
       <section className="container-fluid footer_section">
         <p>
