@@ -30,15 +30,17 @@ const Navbar = () => {
               <div className="d-flex ml-auto flex-column flex-lg-row align-items-center flex ">
                 <ul className="navbar-nav  ">
                   <li className="nav-item active">
-                    <button className="nav-link text-dark">
-                      <Link path="/">Home</Link>
-                    </button>
+                    <Link to="/">
+                      <button className="nav-link text-dark">Home</button>
+                    </Link>
                   </li>
 
                   <li className="nav-item">
-                    <button className="nav-link text-dark">
-                      <Link path="/recipes">Recipes</Link>
-                    </button>
+                    <Link to="/recipes">
+                      <button className="nav-link text-dark" type="submit">
+                        Recipes
+                      </button>
+                    </Link>
                   </li>
                 </ul>
               </div>
