@@ -73,7 +73,7 @@ body {
 /*header section*/
 .hero_area {
   height: 98vh;
-  background-color: #f7f7f7;
+  background-color: #ffe5b4;
 }
 
 .hero_area.sub_pages {
@@ -464,7 +464,7 @@ a:focus {
 /* footer section*/
 
 .footer_section {
-  background-color: #efeded;
+  background-color: #ffe5b4;
   padding: 20px 0;
   font-family: 'Roboto', sans-serif;
 }

@@ -19,13 +19,13 @@ const landingPage = () => {
             className="carousel slide"
             data-ride="carousel"
           >
-            <div className="carousel-inner">
+            <div className="carousel-inner ">
               <div className="carousel-item active">
                 <div className="slider_item-box">
                   <div className="slider_item-container">
-                    <div className="container">
+                    <div className="container ">
                       <div className="row">
-                        <div className="col-md-7">
+                        <div className="col-md-7 ">
                           <div className="slider_item-detail">
                             <div>
                               <h1>
@@ -401,7 +401,7 @@ const landingPage = () => {
 
       <section
         className="info_section layout_padding text-center mt-5"
-        style={{ backgroundColor: '#eeecec' }}
+        style={{ backgroundColor: '#FFE5B4' }}
       >
         <div className="container">
           <div className="row">
