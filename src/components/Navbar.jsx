@@ -1,16 +1,19 @@
+import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import Logo from '../assets/Images/logo.png';
+
+import '../styles/navbar.css';
 
 const Navbar = () => {
   return (
     <>
-      <header className="header_section">
-        <div className="container">
-          <nav className="navbar navbar-expand-lg custom_nav-container pt-3">
-            <div className="navbar-brand">
-              <img src={Logo} alt="logo" />
+      <header className="header_section nav-color ">
+        <div className="container ">
+          <nav className="navbar navbar-expand-lg custom_nav-container pt-3 ">
+            <Link to="/" className="navbar-brand logo-pointer">
+              <img src={Logo} alt="logo" className="mr-2" />
               <span>Agarwal's Kitchen</span>
-            </div>
+            </Link>
             <button
               className="navbar-toggler"
               type="button"
