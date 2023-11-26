@@ -1,0 +1,13 @@
+.letter-style {
+  letter-spacing: 0.3rem;
+}
+.custom_input {
+  border: none;
+  border-bottom: 1px solid #000;
+  letter-spacing: 0.1rem;
+}
+.custom_input:focus {
+  border: none;
+  outline: none;
+  border-bottom: 1px solid #000;
+}

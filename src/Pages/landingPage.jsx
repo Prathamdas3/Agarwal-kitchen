@@ -6,12 +6,14 @@ import {
   Share,
 } from 'phosphor-react';
 import { Link } from 'react-router-dom';
+import Navbar from '../components/Navbar';
 
 import Test from '../assets/Images/test_image.jpg';
 import Hero from '../assets/Images/hero_image.svg';
 const landingPage = () => {
   return (
     <>
+      <Navbar />
       <div className="hero_area ">
         <section className=" slider_section position-relative">
           <div
@@ -166,7 +168,7 @@ const landingPage = () => {
                 </p>
                 <div>
                   <a href="" className="custom_dark-btn">
-                    Buy Now
+                    See More
                   </a>
                 </div>
               </div>
