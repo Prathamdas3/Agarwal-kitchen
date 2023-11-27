@@ -11,3 +11,14 @@
   outline: none;
   border-bottom: 1px solid #000;
 }
+
+.searchModal {
+  background-color: #f7f7f7;
+  width: 20%;
+}
+.searchData {
+  background: #ffe5b4;
+  border: 1px solid #f7f7f7;
+  width: 100%;
+  color: #000;
+}

@@ -1,24 +1,22 @@
 import { useNavigate } from 'react-router-dom';
-import Demo from '../assets/Images/tasty-image.png';
 
-export default function Card() {
+export default function Card({ details }) {
   const navigate = useNavigate();
   return (
     <div className="row layout_padding2">
       <div className="col-md-8">
         <div className="fruit_detail-box">
-          <h3>Best Fresh Orange</h3>
+          <h3>{details.title}</h3>
           <p className="mt-4 mb-5">
-            but the majority have suffered alteration in some form, by injected
-            humour, or randomised words which don't look even slightly
-            believable. If you are going to use a passage of Lorem Ipsum, you
-            need to be
+            {details.process && details.process.slice(0, 90)}
+            <br />
+            ...
           </p>
           <div>
             <button
               href=""
               className="custom_dark-btn "
-              onClick={() => navigate(`/recipes/${id}`)}
+              onClick={() => navigate(`/recipes/${details.id}`)}
             >
               See more
             </button>
@@ -29,12 +27,10 @@ export default function Card() {
         <div className="fruit_img-box d-flex justify-content-center align-items-center">
           <iframe
             width="300"
-            src="https://www.youtube.com/embed/WyYzlzjHcgc?si=maeNOOcuxlBF7oKb"
+            src={details.link}
             title="YouTube video player"
-            frameborder="0"
             allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
           ></iframe>
-          ;
         </div>
       </div>
     </div>
