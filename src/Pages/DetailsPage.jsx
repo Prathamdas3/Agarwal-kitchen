@@ -2,7 +2,7 @@ import { useParams } from 'react-router-dom';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
 import { useRecipeContextProvider } from '../context/RecipeContext';
-import '../styles/detailsPage.css';
+
 export default function DetailsPage() {
   const { id } = useParams();
 
@@ -28,7 +28,9 @@ export default function DetailsPage() {
             allowFullScreen
           ></iframe>
         </div>
-        <h1 className="text-center fw-bold my-3">{details.title}</h1>
+        <h1 className="text-center fw-bold my-3" style={{ letterSpacing: 0.3 }}>
+          {details.title}
+        </h1>
         <div>
           <h3 className="fw-bold mb-2">Ingredients:</h3>
           <ol>

@@ -3,7 +3,7 @@ import {
   YoutubeLogo,
   InstagramLogo,
   TwitterLogo,
-  Share,
+  WhatsappLogo,
 } from 'phosphor-react';
 export default function Footer() {
   return (
@@ -33,7 +33,7 @@ export default function Footer() {
                     <TwitterLogo size={45} weight="fill" color="black" />
                   </a>
                   <a href="">
-                    <Share size={45} weight="fill" color="black" />
+                    <WhatsappLogo size={45} weight="fill" color="black" />
                   </a>
                 </div>
               </div>
