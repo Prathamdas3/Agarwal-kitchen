@@ -5,6 +5,7 @@ import {
   TwitterLogo,
   WhatsappLogo,
 } from 'phosphor-react';
+
 export default function Footer() {
   return (
     <>
@@ -42,10 +43,7 @@ export default function Footer() {
         </div>
       </section>
       <section className="container-fluid footer_section">
-        <p>
-          Copyright &copy; 2019 All Rights Reserved By
-          <a href="https://html.design/">Free Html Templates</a>
-        </p>
+        <p>Copyright &copy; 2023 Agarwal's Kitchen. All Rights Reserved By</p>
       </section>
     </>
   );
