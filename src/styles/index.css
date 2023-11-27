@@ -456,6 +456,9 @@ a:focus {
   font-size: 15px;
 }
 
+.landing-image {
+  padding-right: 33px;
+}
 /* end info section */
 
 /* footer section*/

@@ -1,107 +1,81 @@
-import { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
-import { db } from '../config/firebase';
 import { useRecipeContextProvider } from '../context/RecipeContext';
 
+import Navbar from '../components/Navbar';
+import Footer from '../components/Footer';
+
 export default function FromPage() {
-  const navigate = useNavigate();
-  const { setLink, setTitle, setIngredients, setProcess } =
+  const { saveData, setIngredients, setLink, setProcess, setTitle } =
     useRecipeContextProvider();
-  // const dataCollectionRef = collection(db, 'data');
-
-  // const saveData = async () => {
-  //   await addDoc(dataCollectionRef, {
-  //     link,
-  //     title,
-  //     ingredients,
-  //     process,
-  //     id: Date.now(),
-  //   });
-  //   navigate('/recipes');
-  // };
-
   return (
-    <div>hi</div>
-    // <div className="container mx-auto">
-    //   {/* creating recipe card by the owner */}
-    //   {/* input part starts */}
-    //   <div className="flex flex-col gap-4">
-    //     <h1 className="block mb-2 text-md font-medium text-gray-900 dark:text-white text-center mt-4">
-    //       Create New card of Recipes
-    //     </h1>
-    //     <div>
-    //       <label
-    //         htmlFor="text"
-    //         className="block mb-4 text-md font-medium text-gray-900 dark:text-white "
-    //       >
-    //         Today Video Link
-    //       </label>
-    //       <input
-    //         type="text"
-    //         placeholder="Link of the video"
-    //         className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 mb-4"
-    //         onChange={(e) => setLink(e.target.value)}
-    //         required
-    //       />
-    //     </div>
-    //     <div>
-    //       <label
-    //         htmlFor="text"
-    //         className="block mb-4 text-md font-medium text-gray-900 dark:text-white "
-    //       >
-    //         Today Recipe Name
-    //       </label>
-    //       <input
-    //         type="text"
-    //         placeholder="What's cooking today?"
-    //         className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 mb-4"
-    //         onChange={(e) => setTitle(e.target.value)}
-    //         required
-    //       />
-    //     </div>
-    //     <div>
-    //       <label
-    //         htmlFor="text"
-    //         className="block mb-4 text-md font-medium text-gray-900 dark:text-white "
-    //       >
-    //         Recipe Ingredients
-    //       </label>
-    //       <textarea
-    //         name=""
-    //         cols="100"
-    //         rows="5"
-    //         className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 mb-4"
-    //         placeholder="What are the ingredients?"
-    //         onChange={(e) => setIngredients(e.target.value)}
-    //         required
-    //       ></textarea>
-    //     </div>
-    //     <div>
-    //       <label
-    //         htmlFor="text"
-    //         className="block mb-4 text-md font-medium text-gray-900 dark:text-white "
-    //       >
-    //         Recipe Process
-    //       </label>
-    //       <textarea
-    //         name=""
-    //         id=""
-    //         cols="100"
-    //         rows="10"
-    //         className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 mb-4"
-    //         placeholder="What are the process?"
-    //         onChange={(e) => setProcess(e.target.value)}
-    //         required
-    //       ></textarea>
-    //     </div>
-    //   </div>
-    //   <button
-    //     type="submit"
-    //     className="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto px-6 py-3 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
-    //     onClick={saveData}
-    //   >
-    //     Submit
-    //   </button>
-    // </div>
+    <>
+      <Navbar />
+      <div className="container mx-auto">
+        {/* creating recipe card by the owner */}
+        {/* input part starts */}
+        <div>
+          <h1 className="text-center my-3 fw-bold">
+            Create New card of Recipes
+          </h1>
+          <div className="d-flex flex-column">
+            <label htmlFor="text" className=" fs-5 fw-medium">
+              Today Video Link
+            </label>
+            <input
+              type="text"
+              placeholder="Link of the video"
+              className="mb-3"
+              onChange={(e) => setLink(e.target.value)}
+              required
+            />
+
+            <label htmlFor="text" className=" fs-5 fw-medium">
+              Today Recipe Name
+            </label>
+            <input
+              type="text"
+              placeholder="What's cooking today?"
+              className="mb-3"
+              onChange={(e) => setTitle(e.target.value)}
+              required
+            />
+
+            <label htmlFor="text" className="fs-5 fw-medium">
+              Recipe Ingredients
+            </label>
+            <textarea
+              name=""
+              cols="100"
+              rows="5"
+              className="mb-3"
+              placeholder="What are the ingredients?"
+              onChange={(e) => setIngredients(e.target.value)}
+              required
+            ></textarea>
+
+            <label htmlFor="text" className=" fs-5 fw-medium">
+              Recipe Process
+            </label>
+            <textarea
+              cols="100"
+              rows="10"
+              className="mb-3"
+              placeholder="How did you made this awesome recipe?"
+              onChange={(e) => setProcess(e.target.value)}
+              required
+            ></textarea>
+          </div>
+        </div>
+        <div className="d-flex justify-content-end ">
+          <button
+            type="submit"
+            onClick={saveData}
+            className="px-3 py-2 rounded-3 bg-black border-0 text-white fw-semibold "
+          >
+            Submit
+          </button>
+        </div>
+      </div>
+      <Footer />
+    </>
   );
 }

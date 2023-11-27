@@ -1,9 +1,12 @@
 import '../styles/recipePage.css';
 import Navbar from '../components/Navbar';
 import Card from '../components/card';
+import Footer from '../components/Footer';
 import { FiSearch } from 'react-icons/fi';
+import { useRecipeContextProvider } from '../context/RecipeContext';
 
 export default function RecipesPage() {
+  const { allData } = useRecipeContextProvider();
   return (
     <>
       <Navbar />
@@ -16,8 +19,11 @@ export default function RecipesPage() {
           <input className=" custom_input" placeholder="Recipe Name" />
           <FiSearch size={24} />
         </div>
-        <Card />
+        {allData.map((data) => (
+          <Card key={data.id} details={data} />
+        ))}
       </div>
+      <Footer />
     </>
   );
 }
