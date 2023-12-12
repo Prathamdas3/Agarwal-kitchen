@@ -1,14 +1,14 @@
-import { Link } from 'react-router-dom';
-import Navbar from '../components/Navbar';
-import { useRecipeContextProvider } from '../context/RecipeContext';
-import Test from '../assets/Images/test_image.jpg';
-import Hero from '../assets/Images/hero_image.svg';
-import Card from '../components/card';
-import Footer from '../components/Footer';
+import { Link } from 'react-router-dom'
+import Navbar from '../components/Navbar'
+import { useRecipeContextProvider } from '../context/RecipeContext'
+import Test from '../assets/Images/test_image.jpg'
+import Hero from '../assets/Images/hero_image.svg'
+import Card from '../components/card'
+import Footer from '../components/Footer'
 
 const landingPage = () => {
-  const { allData } = useRecipeContextProvider();
-  const selectedData = [allData[0], allData[1], allData[2]];
+  const { allData } = useRecipeContextProvider()
+  const selectedData = [allData[0], allData[1], allData[2]]
 
   return (
     <>
@@ -34,7 +34,10 @@ const landingPage = () => {
                                 Agarwal's Kitchen
                               </h1>
                               <p
-                                style={{ width: '40rem', textAlign: 'justify' }}
+                                style={{
+                                  textAlign: 'justify',
+                                  wordWrap: 'break-word',
+                                }}
                               >
                                 There are many variations of passages of Lorem
                                 Ipsum available, but the majority have suffered
@@ -84,8 +87,8 @@ const landingPage = () => {
 
       {/* About section start */}
 
-      <section className="container my-5 ">
-        <h2 className=" fw-bolder">About Me</h2>
+      <section className="container my-5  ">
+        <h2 className=" fw-bolder pb-5">About Me</h2>
 
         <div className="d-flex gap-5 justify-content-between flex-fill flex-wrap-reverse flex-md-nowrap">
           <div className="pt-5">
@@ -113,7 +116,7 @@ const landingPage = () => {
 
       <Footer />
     </>
-  );
-};
+  )
+}
 
-export default landingPage;
+export default landingPage

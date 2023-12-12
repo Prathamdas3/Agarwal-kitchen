@@ -1,26 +1,27 @@
-import { useState } from 'react';
-import { Link } from 'react-router-dom';
-import '../styles/recipePage.css';
-import Navbar from '../components/Navbar';
-import Card from '../components/card';
-import Footer from '../components/Footer';
-import { FiSearch } from 'react-icons/fi';
-import { useRecipeContextProvider } from '../context/RecipeContext';
-import Pagination from '../components/Pagination';
+import { useState } from 'react'
+import { Link } from 'react-router-dom'
+import '../styles/recipePage.css'
+import Navbar from '../components/Navbar'
+import Card from '../components/card'
+import Footer from '../components/Footer'
+import { FiSearch } from 'react-icons/fi'
+import { X } from 'phosphor-react'
+import { useRecipeContextProvider } from '../context/RecipeContext'
+import Pagination from '../components/Pagination'
 
 export default function RecipesPage() {
-  const { allData } = useRecipeContextProvider();
-  const [filterData, setFilterData] = useState([]);
-  const [searchText, setSearchText] = useState('');
+  const { allData } = useRecipeContextProvider()
+  const [filterData, setFilterData] = useState([])
+  const [searchText, setSearchText] = useState('')
 
   const handleSearch = (event) => {
-    const searchWord = event.target.value;
-    setSearchText(event.target.value);
+    const searchWord = event.target.value
+    setSearchText(event.target.value)
     const newFilterData = allData.filter((value) => {
-      return value.title.toLowerCase().includes(searchText.toLowerCase());
-    });
-    searchWord === '' ? setFilterData([]) : setFilterData(newFilterData);
-  };
+      return value.title.toLowerCase().includes(searchText.toLowerCase())
+    })
+    searchWord === '' ? setFilterData([]) : setFilterData(newFilterData)
+  }
 
   return (
     <>
@@ -48,17 +49,24 @@ export default function RecipesPage() {
               ))}
             </div>
           )}
-          <FiSearch size={24} />
+          {searchText.length != 0 ? (
+            <X
+              size={24}
+              onClick={() => setFilterData([]) || setSearchText('')}
+            />
+          ) : (
+            <FiSearch size={24} />
+          )}
         </div>
         {allData.map((data) => (
           <Card key={data.id} details={data} />
         ))}
-        <div className="d-flex justify-content-center">
+        {/* <div className="d-flex justify-content-center">
           <Pagination />
-        </div>
+        </div> */}
       </div>
 
       <Footer />
     </>
-  );
+  )
 }
