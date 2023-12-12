@@ -550,6 +550,26 @@ a:focus {
   .tasty_section h2 {
     font-size: 80px;
   }
+  .res-card {
+    display: flex;
+    flex-direction: column-reverse;
+    text-align: center;
+  }
+  .res-card p {
+    text-align: justify;
+    word-wrap: break-word;
+  }
+  .button-wrapper-card {
+    display: flex;
+    justify-content: end;
+    align-items: center;
+  }
+  .res-details {
+    height: 100%;
+  }
+  .res-wrapper-details {
+    max-height: 70%;
+  }
 }
 
 @media (max-width: 576px) {

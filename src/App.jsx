@@ -5,11 +5,21 @@ const RecipesPage = lazy(() => import('./Pages/RecipesPage'))
 const DetailsPage = lazy(() => import('./Pages/DetailsPage'))
 const FromPage = lazy(() => import('./Pages/FromPage'))
 const NotFoundPage = lazy(() => import('./Pages/NotFoundPage'))
+import Loading from './assets/Images/loading.gif'
 
 export default function App() {
   return (
     <>
-      <Suspense fallback={<h2>Loading...</h2>}>
+      <Suspense
+        fallback={
+          <div
+            className=" d-flex flex-column justify-content-center align-items-center"
+            style={{ height: '100vh' }}
+          >
+            <img src={Loading} alt="loading" />
+          </div>
+        }
+      >
         <Routes>
           <Route exact path="/" element={<LandingPage />} />
           <Route exact path="/recipes" element={<RecipesPage />} />
