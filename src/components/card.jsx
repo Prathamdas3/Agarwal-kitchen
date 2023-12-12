@@ -1,18 +1,20 @@
-import { useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom'
 
 export default function Card({ details }) {
-  const navigate = useNavigate();
+  const navigate = useNavigate()
   return (
-    <div className="row layout_padding2">
-      <div className="col-md-8">
+    <div className="row layout_padding2 res-card">
+      <div className="col-md-8 ">
         <div className="fruit_detail-box">
-          <h3>{details.title}</h3>
-          <p className="mt-4 mb-5">
-            {details.process && details.process.slice(0, 90)}
-            <br />
-            ...
-          </p>
-          <div>
+          <h3 className="my-4 ">{details.title}</h3>
+          <div className=" mb-2">
+            <p>
+              {details.process && details.process.slice(0, 90)}
+              <br />
+              ...
+            </p>
+          </div>
+          <div className="button-wrapper-card">
             <button
               href=""
               className="custom_dark-btn "
@@ -34,5 +36,5 @@ export default function Card({ details }) {
         </div>
       </div>
     </div>
-  );
+  )
 }
