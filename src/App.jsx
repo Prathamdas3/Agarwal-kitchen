@@ -24,7 +24,7 @@ export default function App() {
           <Route exact path="/" element={<LandingPage />} />
           <Route exact path="/recipes" element={<RecipesPage />} />
           <Route exact path="/recipes/:id" element={<DetailsPage />} />
-          <Route exact path="/form" element={<FromPage />} />
+          <Route exact path="/recipes/form" element={<FromPage />} />
           <Route path="*" element={<NotFoundPage />} />
         </Routes>
       </Suspense>
