@@ -11,7 +11,7 @@ export default function Footer() {
     <>
       <section
         className="info_section layout_padding text-center mt-5"
-        style={{ backgroundColor: '#FFE5B4', minHeight: '28vh' }}
+        style={{ backgroundColor: '#FFE5B4' }}
       >
         <div className="container ">
           <div className="row">

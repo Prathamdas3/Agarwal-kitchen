@@ -13,7 +13,10 @@ const Navbar = () => {
   }
   return (
     <>
-      <header className="header_section  " style={{ background: '#f7f7f7' }}>
+      <header
+        className="header_section"
+        style={{ background: '#f7f7f7', height: '10vh' }}
+      >
         <div className="container ">
           <nav className="navbar navbar-expand-lg custom_nav-container pt-3 ">
             <Link

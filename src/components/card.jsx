@@ -1,14 +1,16 @@
 import { useNavigate } from 'react-router-dom'
-
-export default function Card({ details }) {
+export default function Card({ details, setSearchParams }) {
   const navigate = useNavigate()
   return (
     <div className="row layout_padding2 res-card">
       <div className="col-md-8 ">
         <div className="fruit_detail-box">
-          <h3 className="my-4 ">{details.title}</h3>
+          <h3 className="my-4 ">
+            {details.title[0].toUpperCase() +
+              details.title.slice(1, details.title.length).toLowerCase()}
+          </h3>
           <div className=" mb-2">
-            <p>
+            <p className="text-warp">
               {details.process && details.process.slice(0, 90)}
               <br />
               ...
@@ -18,7 +20,13 @@ export default function Card({ details }) {
             <button
               href=""
               className="custom_dark-btn "
-              onClick={() => navigate(`/recipes/${details.id}`)}
+              onClick={() =>
+                navigate(`/recipes/${details.id}`) ||
+                setSearchParams((prev) => {
+                  prev.set('id', details.id)
+                  return prev
+                })
+              }
             >
               See more
             </button>

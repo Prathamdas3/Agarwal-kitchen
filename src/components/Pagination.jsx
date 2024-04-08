@@ -1,33 +1,58 @@
-export default function Pagination() {
+export default function Pagination({
+  page_count,
+  start,
+  end,
+  length,
+  setSearchParams,
+  searchParams,
+}) {
+  const arr = []
+  for (let i = 1; i <= page_count; i++) {
+    arr.push(i)
+  }
+
   return (
-    <section aria-label="Page navigation example">
-      <ul className="pagination">
+    <section aria-label="Page navigation example ">
+      <ul className="pagination text-black">
         <li className="page-item">
-          <a className="page-link" href="#" aria-label="Previous">
+          <button
+            className="page-link text-black"
+            href="#"
+            aria-label="Previous"
+            disabled={start > 0}
+            onClick={() => {
+              setSearchParams((prev) => {
+                prev.set('page', `${Number(searchParams.get('page')) - 1}`)
+              })
+            }}
+          >
             <span aria-hidden="true">&laquo;</span>
-          </a>
+          </button>
         </li>
+        {arr.map((e, index) => (
+          <li className="page-item" key={index}>
+            <a className="page-link text-black" href="#">
+              {e}
+            </a>
+          </li>
+        ))}
+
         <li className="page-item">
-          <a className="page-link" href="#">
-            1
-          </a>
-        </li>
-        <li className="page-item">
-          <a className="page-link" href="#">
-            2
-          </a>
-        </li>
-        <li className="page-item">
-          <a className="page-link" href="#">
-            3
-          </a>
-        </li>
-        <li className="page-item">
-          <a className="page-link" href="#" aria-label="Next">
+          <button
+            className="page-link text-black"
+            href="#"
+            aria-label="Next"
+            disabled={end < length}
+            onClick={() => {
+              setSearchParams((prev) => {
+                prev.set('page', `${Number(searchParams.get('page')) + 1}`)
+              })
+            }}
+          >
             <span aria-hidden="true">&raquo;</span>
-          </a>
+          </button>
         </li>
       </ul>
     </section>
-  );
+  )
 }
