@@ -44,10 +44,12 @@ export const ContextProvider = ({ children }) => {
     const getData = async () => {
       try {
         const data = await getDocs(dataCollectionRef)
-        const filteredData = data.docs.map((doc) => ({
-          ...doc.data(),
-          id: doc.id,
-        }))
+        const filteredData = data.docs
+          .map((doc) => ({
+            ...doc.data(),
+            id: doc.id,
+          }))
+          .sort((a, b) => b.createdAt - a.createdAt)
         setAllData(filteredData)
       } catch (error) {
         console.error(error)

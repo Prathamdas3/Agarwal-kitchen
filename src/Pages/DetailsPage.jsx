@@ -17,7 +17,7 @@ export default function DetailsPage() {
   return (
     <>
       <Navbar />
-      <div className="container d-flex flex-column">
+      <div className="container d-flex flex-column" style={{ height: '62vh' }}>
         <div className=" mt-5 res-wrapper-details">
           <iframe
             width="100%"
@@ -36,7 +36,9 @@ export default function DetailsPage() {
           <h3 className="fw-bold mb-2">Ingredients:</h3>
           <ol>
             {ingredientsList[0].map((item, index) => (
-              <li key={index}>{item}</li>
+              <li key={index} className="text-wrap">
+                <p style={{ width: '20px' }}> {item}</p>
+              </li>
             ))}
           </ol>
         </div>

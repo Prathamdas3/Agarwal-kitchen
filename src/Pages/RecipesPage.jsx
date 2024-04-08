@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import { Link } from 'react-router-dom'
+import { Link, useSearchParams } from 'react-router-dom'
 import '../styles/recipePage.css'
 import Navbar from '../components/Navbar'
 import Card from '../components/card'
@@ -13,6 +13,23 @@ export default function RecipesPage() {
   const { allData } = useRecipeContextProvider()
   const [filterData, setFilterData] = useState([])
   const [searchText, setSearchText] = useState('')
+  const [searchParams, setSearchParams] = useSearchParams({
+    page: '1',
+    per_page: '6',
+    id: '',
+  })
+
+  const page_count =
+    allData !== undefined
+      ? Math.ceil(allData?.length / Number(searchParams.get('per_page')))
+      : 1
+
+  const start =
+    (Number(searchParams.get('page')) - 1) *
+    Number(searchParams.get('per_page'))
+  const end = start + Number(searchParams.get('per_page'))
+
+  const entries = allData?.slice(start, end)
 
   const handleSearch = (event) => {
     const searchWord = event.target.value
@@ -58,12 +75,23 @@ export default function RecipesPage() {
             <FiSearch size={24} />
           )}
         </div>
-        {allData.map((data) => (
-          <Card key={data.id} details={data} />
+        {entries.map((data) => (
+          <Card
+            key={data.id}
+            details={data}
+            setSearchParams={setSearchParams}
+          />
         ))}
-        {/* <div className="d-flex justify-content-center">
-          <Pagination />
-        </div> */}
+        <div className="d-flex justify-content-center">
+          <Pagination
+            page_count={page_count}
+            start={start}
+            end={end}
+            length={allData.length}
+            setSearchParams={setSearchParams}
+            searchParams={searchParams}
+          />
+        </div>
       </div>
 
       <Footer />
